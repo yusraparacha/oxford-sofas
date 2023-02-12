@@ -1,0 +1,1241 @@
+<html>
+<head>
+<title></title>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<style>
+body 
+{
+margin:0;padding:0
+}
+a
+{
+text-decoration: none;
+color: inherit;   
+}
+
+.menu-bar{
+  background-color: black;
+  text-align: center ;
+  margin: 0px 0 0 0;
+  height: 70px;
+}
+.menu-bar ul{
+  display: inline-flex;
+  list-style:none;
+  color: white;
+}
+.menu-bar ul li{
+  width: 100%;
+  margin: -4px -1px 10px 45px;
+  padding: 15px;
+ 
+}
+.menu-bar ul li a{
+  text-decoration: none;
+  color:white;
+ 
+}
+.active, .menu-bar ul li:hover{ 
+   background: rgb(34, 34, 34); 
+   border-radius: 1px; 
+   float: left;
+} 
+.sub-menu1{
+  display: none;
+  
+}
+.menu-bar ul li:hover .sub-menu1{
+  display: block;
+  position:absolute;
+  background:black;
+  margin:0px 0 0 -20px;
+}
+.menu-bar ul li:hover .sub-menu1 ul{
+  display: block;
+  margin: 0px;
+}
+.menu-bar ul li:hover .sub-menu1 ul li{
+  width: 100px;
+  padding: 10px;
+  border-bottom: 1px dotted lightcoral;
+  background: transparent;
+  border-radius: 0;
+ text-align:left;
+}
+.menu-bar ul li:hover .sub-menu1 ul li:last-child{
+border-bottom: none;
+}
+.menu-bar ul li:hover .sub-menu1 ul li a:hover{
+  color: grey;
+}
+.hum{
+  color:gray;
+  margin: -10px 0 0 -10%;
+}
+
+.container{
+    width:96%;
+    height:30px;
+    background: black;
+    padding: 2%;
+    display: flex;
+}
+form{
+    background: #fff;
+    width: 65%;
+    height: 55px;
+    position: absolute;
+    display: flex;
+}
+form input{
+    flex: 1;
+    border: none;
+    outline: none;
+
+}
+form button{
+    background: tomato;
+    padding: 10px 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.fa-magnifying-glass{
+    align-self: center;
+    padding: 10px 20px;
+   color:gray;
+   font-size: 20px;
+  
+}
+.fa-cart-shopping{
+    /* padding: 10px 20px; */
+    color: #777;
+    background-color: black;
+    font-size: 23px;
+    position: absolute;
+    margin:8px 0 0 -3%;
+}
+.fa-user{
+    color: #777;
+    background-color: black;
+     font-size: 23px;
+     position: absolute;
+     margin:7px 0 0 -6%;
+}
+
+.search-bar {
+    width: 94%;
+    height: 69px;
+    margin: -13px 0 0 10%;
+}
+.num{
+   color: gray;
+   font-size: 25px;
+   position: absolute;
+   margin:-20px 0 0  78% ;
+}
+
+
+#diva /* popout cart whole  */
+{
+    width:20%;
+    color: white;
+    height: 330px;
+    border: 1px solid rgba(0, 0, 0, 0.233);
+    padding: 2%;
+    margin:10px 25px 0 75%;
+    position: fixed;
+    z-index: 1000;
+    background-color: rgb(0, 0, 0);
+}
+.divb /* img */
+{
+    width:40%;
+    margin: 39px 0 0 0;
+    position: absolute;
+}
+.divb img
+{
+    object-fit: cover;
+    width: 65%;
+    height: 80px;
+}
+#spana /*Items in your bag  */
+{
+    font-size: 24px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    position: absolute;
+    margin: -10px 0 0 0;
+}
+#spanb /* Habitt - three seater velvet foam */
+{
+    font-family: Microsoft Yi Baiti;
+    position: absolute;
+    font-size: 23px;
+    margin: -6px 0 0 0;
+}
+#spanc /* bold properties */
+{
+    position: absolute;
+    margin: 39px 0 0 30%;
+    display: flex;
+    font-family: Microsoft Yi Baiti;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    line-height: 25px;
+    font-size: 20px;
+}
+#spand /* front of properties */
+{
+    position: absolute;
+    margin: 39px 0 0 55%;
+    display: flex;
+    font-family: Microsoft Yi Baiti;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    line-height: 25px;
+    font-size: 20px;
+}
+.divc /* line */
+{
+    width: 100%;
+    height: 1.5px;
+    position: relative;
+    margin: 155px 0 0 0;
+    background-color: rgba(0, 0, 0, 0.63);
+}
+.divd /* subtotal */
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 24px 0 0 0;
+    font-family: Microsoft Yi Baiti;
+    font-size: 23px;
+    font-weight: bold;
+}
+.divd span
+{
+    margin: 0 47% 0 0;
+}
+.dive
+{
+    margin: 30px 0 0 0;
+}
+.dive button
+{
+    background-color: white;
+    border: none;
+    padding: 0 1% 1% 1%;
+    
+    font-size: 33px;
+    height: 45px;
+    width: 100%;
+    font-family: Microsoft Yi Baiti;
+}
+
+.div2 /* whole selects */
+{
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+margin: 90px 0 0px 0;
+width: 100%;
+height: 500px;
+position: absolute;
+}
+#div_3 /* select */
+{
+margin: 0 0px -2px 1%; 
+border: 1px solid rgba(0, 0, 0, 0.075);
+color: black;
+font-family: sans-serif;
+font-size: 20px;
+width: 15%;
+height: fit-content;
+padding: 10px;
+cursor: grab;
+/* box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.055); */
+}
+#div_3 svg
+{
+float: right;
+margin: 5px 0 0 0;
+}
+#div_4 /* select */
+{
+margin: 0 0px -2px 1%; 
+border: 1px solid rgba(0, 0, 0, 0.075);
+color: black;
+font-family: sans-serif;
+font-size: 20px;
+width: 15%;
+height: fit-content;
+padding: 10px;
+cursor: grab;
+/* box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.055); */
+}
+#div_4 svg
+{
+float: right;
+margin: 5px 0 0 0;
+}
+#div_5 /* select */
+{
+margin: 0 0px -2px 1%; 
+border: 1px solid rgba(0, 0, 0, 0.075);
+color: black;
+font-family: sans-serif;
+font-size: 20px;
+width: 15%;
+height: fit-content;
+padding: 10px;
+cursor: grab;
+/* box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.055); */
+}
+#div_5 svg
+{
+float: right;
+margin: 5px 0 0 0;
+}
+#div3 /* checkbox wala */
+{
+width: 15%;
+height: 200px;
+margin: 0 0px -2px 1%; 
+border: 1px solid rgba(0, 0, 0, 0.075);
+padding: 10px;
+font-size: 19px;
+line-height: 36px;
+font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#div3 input
+{
+width: 15px;
+height: 15px;
+}
+#div4 /* colors wala drop down whole  */
+{
+width: 15%;
+height: 250px;
+margin: 0 0px -2px 1%; 
+border: 1px solid rgba(0, 0, 0, 0.075);
+padding: 10px 10px 10px 10px;
+}
+#div55 /* checkbox wala */
+{
+width: 15%;
+height: 200px;
+margin: 0 0px -2px 1%; 
+border: 1px solid rgba(0, 0, 0, 0.075);
+padding: 10px;
+font-size: 19px;
+line-height: 36px;
+font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#div55 input
+{
+width: 15px;
+height: 15px;
+}
+.divG /* flex for colors ka whole  */
+{
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+width: 100%;
+height: fit-content;
+padding: 10px;
+position: relative;
+}
+#divG /* colors ka div */
+{
+width: 45px;
+height: 45px;
+margin: 0 25px 0 0;
+}
+#divG:hover
+{
+    transform: scale(1.06);
+}
+.divH /* flex for colors ka whole  */
+{
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+width: 100%;
+height: fit-content;
+padding: 10px;
+position: relative;
+margin: -5px 0 0 0;
+}
+#divH /* colors ka div */
+{
+width: 45px;
+height: 45px;
+margin: 0 25px 0 0;
+}
+#divH:hover
+{
+    transform: scale(1.06);
+}
+.divF /* flex for colors ka whole  */
+{
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+width: 100%;
+height: fit-content;
+padding: 10px;
+position: relative;
+margin: -5px 0 0 0;
+}
+#divF /* colors ka div */
+{
+width: 45px;
+height: 45px;
+margin: 0 25px 0 0;
+}
+#divF:hover
+{
+    transform: scale(1.06);
+}
+.divL /* flex for colors ka whole  */
+{
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+width: 100%;
+height: fit-content;
+padding: 10px;
+position: relative;
+margin: -5px 0 0 0;
+}
+#divL /* colors ka div */
+{
+width: 45px;
+height: 45px;
+margin: 0 25px 0 0;
+}
+#divL:hover
+{
+    transform: scale(1.06);
+}
+.div5 /* listing whole  */
+{
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: flex-start;
+padding: 0 4% 0 4%;
+margin: 30px 0 0 15%;
+justify-content: center;
+}
+#spanproducts
+{
+font-family: 'Microsoft Yi Baiti';
+font-size: 60px;
+position: absolute;
+}
+.div6 /* listed box  */
+{
+width: 30%;
+margin: 30px 0 0 30px;
+height: fit-content;
+position: relative;
+z-index: 500;
+}
+#button3 
+{
+position: absolute;
+margin: 190px 0 0 25%;
+font-size: 25px;
+font-family: 'Times New Roman', Times, serif;
+border: 1px solid rgba(0, 0, 0, 0.705);
+width: fit-content;
+height: fit-content;
+border-radius: 8px;
+padding: 4px 10px 4px 10px;
+background-color: rgb(0, 0, 0);
+cursor:grab;
+color: white;
+}
+#div7 /* upper part  */
+{
+width: 100%;
+}
+#div7 img
+{
+width: 100%;
+object-fit: contain;
+height: 300px;
+}
+#div8 /* lower part  */
+{
+width: fit-content;
+height: fit-content;
+padding: 0 2% 2% 4%;
+}
+#div8 span
+{
+font-size: 16px;
+font-family: 'Times New Roman', Times, serif;
+line-height: 145%;
+letter-spacing: 1px;
+}
+#span1 /* company name  */
+{
+color: rgb(87, 85, 85);
+}
+footer{
+    color: #d9d9d9;
+    margin: 100px 0 0 0;
+    bottom: 0px;
+    width: 100%;
+    background: #111;
+  }
+  .main-content{
+    display: flex;
+  }
+  .main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+  }
+  .box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+  }
+  .box .content:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+  }
+  .box .content:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #f12020;
+    top: -10px;
+  }
+  .left .content p{
+    text-align: justify;
+  }
+  .left .content .social{
+    margin: 20px 0 0 0;
+  }
+  .left .content .social a{
+    padding: 0 2px;
+  }
+  .left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .left .content .social a span:hover{
+    background: #f12020;
+  }
+  .center .content .fas{
+    font-size: 1.4375rem;
+    background: #1a1a1a;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .center .content .fas:hover{
+    background: #f12020;
+  }
+  .center .content .text{
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  .center .content .phone{
+    margin: 15px 0;
+  }
+  .right form .text{
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+    color: #656565;
+  }
+  .right form .msg{
+    margin-top: 10px;
+  }
+  .right form input, .right form textarea{
+    width: 100%;
+    font-size: 1.0625rem;
+    background: #151515;
+    padding-left: 10px;
+    border: 1px solid #222222;
+  }
+  .right form input:focus,
+  .right form textarea:focus{
+    outline-color: #3498db;
+  }
+  .right form input{
+    height: 35px;
+  }
+  .right form .btn{
+    margin-top: 10px;
+  }
+  .right form .btn button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #f12020;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .right form .btn button:hover{
+    background: #000;
+  }
+  .bottom center{
+    padding: 5px;
+    font-size: 0.9375rem;
+    background: #151515;
+  }
+  .bottom center span{
+    color: #656565;
+  }
+  .bottom center a{
+    color: #f12020;
+    text-decoration: none;
+  }
+  .bottom center a:hover{
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .main-content{
+      flex-wrap: wrap;
+      flex-direction: column;
+      
+    }
+    .main-content .box{
+      margin: 5px 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="divSEARCHBAR">
+    <a href="Home.html" target="_blank"><img src="0cecbf1b77394da080e548a97e797796.png" width="140px" height="80px" style="position: absolute; "></a>
+<div class="container">
+    <div class="search-bar">
+        <form>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="what are u looking for?">
+
+        <button type="submit">Search</button>
+    
+    
+        </div>  
+    <div class="num">
+      <p><b><a href="contactus.html">Contact</p></a></div></b>
+        <div class="icon">
+           <a href="checkout.html" target="_blank"><i class="fa-solid fa-cart-shopping"></a> </i>
+        </div>
+        <div class="icon">
+           <a href="signup.html" target="_blank"> <i class="fa-solid fa-user"></a></i>
+        </div>
+    </form>
+
+ </div>
+</div>
+<!-- <div class="icons">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <i class="fa-solid fa-user"></i>  -->
+    
+
+<!-- </div>  -->
+</div>
+</div>
+<div class="menu-bar">
+<ul>
+ <div class="hum"><i class="hover"> <svg xmlns="http://www.w3.org/2000/svg" width="50" height="60" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg></div></i>
+  <li class="hover"><a href="#"> <b>Habitt</b></a>
+      
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">L Shaped Sofa</a></li>
+          <li><a href="#">lawson Style Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">Oxford Sofa</a></li>
+      
+      </ul>
+  </div>
+  </li>
+  <li class="hover"><a href="#"><b>InterWood</b></a>
+       <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">Luxury Sofa</a></li>
+        <li><a href="#">Oxford Sofa</a></li> 
+           <li><a href="#">7 Seater Sofa</a></li>
+      </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>Maiden</b></a>
+       <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">L Shaped Sofa</a></li>
+          <li><a href="#">Oxford Sofa</a></li>
+         <li><a href="#">Sleeper Sofa</a></li> 
+       </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>DolceVita</b></a>
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+           <li><a href="#">L Shaped Sofa</a></li>
+          <li><a href="#">Oxford Sofa</a></li>
+          <li><a href="#">Sleeper Sofa</a></li>
+      </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>Safari</b></a>
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">L Shaped Sofa</a></li>
+           <li><a href="#">Oxford Sofa</a></li>
+          <li><a href="#">Sleeper Sofa</a></li> 
+      </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>Hamdrads</b></a>
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">L Shaped Sofa</a></li>
+          <li><a href="#">Oxford Sofa</a></li>
+           <li><a href="#">Sleeper Sofa</a></li>
+      </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>Salehab</b></a>
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">7 Seater Sofa</a></li>
+          <li><a href="#">Sectional Sofa</a></li>
+          <li><a href="#">Luxury Sofa</a></li>
+      </ul>
+  </div>
+</li>
+<li class="hover">
+<a href="#"><b>ModernArt</b></a>
+<div class="sub-menu1">
+<ul>
+  <li><a href="#">Single Sofa</a></li>
+  <li><a href="#">Double Sofa</a></li>
+  <li><a href="#">5 Seater Sofa</a></li>
+  <li><a href="#">7 Seater Sofa</a></li>
+  <li><a href="#">Sectional Sofa</a></li>
+  <li><a href="#">Luxury Sofa</a></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+
+    <div id="diva" style="display: none;">
+
+        <span id="spana">ITEMS IN YOUR BAG</span><br><br><br>
+        <span id="spanb">Habitt - three seater velvet foam</span>
+        <div class="divb"> <img src="https://media.istockphoto.com/id/1227213888/photo/mock-up-interior-for-minimal-living-room-design-beige-sofa-and-green-plant-on-white.jpg?s=612x612&w=0&k=20&c=UID_IVrObuefiMl5QbNrWZZeVEbgBCXhhdyHhiCDzdQ="></div>
+        
+        <div id="spanc">
+        <span><strong>Color:</strong></span>
+        <span><strong>Quantity:</strong></span>
+        <span><strong>Price:</strong></span>
+        </div>
+        
+        <div id="spand">
+        <span>Yellow</span>
+        <span>1</span>
+        <span>$24.99</span>
+        </div>
+        
+        <div class="divc">
+        </div>
+        
+        <div class="divd">
+        <span>Subtotal</span>
+        <span>($24.99)</span>
+        </div>
+        
+        <div class="dive">
+        <button><a href="checkout.html" target="_blank">Proceed to checkout</a></button>
+        </div>
+        
+        </div>
+    
+    <!--------------------------------------->
+<!-- Sort by -->
+<div class="div2">
+<div id="div_3">
+Sofa Size
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+</svg>
+</div>
+<div id="div3" style="display: none;">
+    <input type="checkbox" name="selecti"> <label>One seater</label>
+    <br>
+    <input type="checkbox" name="selecti">  <label>Two seater</label>
+    <br>
+    <input type="checkbox" name="selecti">  <label>Three seater</label>
+    <br>
+    <input type="checkbox" name="selecti">  <label>large</label>
+    <br>
+    <input type="checkbox" name="selecti">  <label>Small</label>
+</div>
+<div id="div_4">
+Color
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+</svg>
+</div>
+<div id="div4" style="display: none;">
+<div class="divG">
+    <div id="divG" style="background-color: black;"></div>
+    <div id="divG" style="background-color: brown;"></div>
+    <div id="divG" style="background-color: blue;"></div>
+</div>
+<div class="divH">
+    <div id="divH" style="background-color: pink;"></div>
+    <div id="divH" style="background-color: red;"></div>
+    <div id="divH" style="background-color: green;"></div>
+</div>
+<div class="divL">
+    <div id="divL" style="background-color: yellow;"></div>
+    <div id="divL" style="background-color: violet;"></div>
+    <div id="divL" style="background-color: brown;"></div>
+</div>
+<div class="divF">
+    <div id="divF" style="background-color: grey;"></div>
+    <div id="divF" style="background-color: aqua;"></div>
+    <div id="divF" style="background-color: navy;"></div>
+</div>
+</div>
+<div id="div_5">
+    Price Range
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        </svg>
+</div>
+
+<div id="div55" style="display: none;">
+    <input type="checkbox"> $0-$10
+    <br>
+    <input type="checkbox"> $10-$100
+    <br>
+    <input type="checkbox"> $100-$1000
+    <br>
+    <input type="checkbox"> $1000-$10,000
+    <br>
+    <input type="checkbox"> $10,000-$100,000
+
+</div>
+
+</div>
+</div>
+<!--------------------------------------->
+<!-- listing whole  -->
+<div class="div5">
+  <span id="spanproducts"> Our Collection</span>
+  <!-- <img src="https://fontawesomeicons.com/images/svg/chevron-forward.svg" width="60px " height="50px" style=" position:absolute; margin: 220px 0 0 91%;">
+  <img src="https://www.svgrepo.com/download/327696/chevron-back.svg" width="50px" height="50px" style="margin: 220px 0 0 -3%;">
+  whole part  -->
+  <div class="div6">
+    
+      <button id="button3" style="display: none;">ADD TO CART</button>
+      <!-- upper part  -->
+      <div id="div7">
+      <img src="Sofa-with-Curved-Design-and-Deep-Stitching-Details,-Black.webp">
+      </div>
+      <!-- lower part  -->
+      
+      <div id="div8">
+        <a href="product - Copy (2).html">
+      <!-- description aigi yahan  -->
+      <span> Piece of furniture has the ability to define the style of a personal living space</span> 
+      <br>
+      <!--company name aiga yahan -->
+      <span id="span1">Habitt</span>
+      <br>
+      <!-- price aigi yahan  -->
+      <span>$240,000</span>
+    </a>
+      </div>
+      </div>
+      <div class="div6">
+    
+        <button id="button3" style="display: none;">ADD TO CART</button>
+        <!-- upper part  -->
+        <div id="div7">
+        <img src="image84520.webp">
+        </div>
+        <!-- lower part  -->
+        
+        <div id="div8">
+          <a href="product - Copy (2).html">
+        <!-- description aigi yahan  -->
+        <span> Piece of furniture has the ability to define the style of a personal living space</span> 
+        <br>
+        <!--company name aiga yahan -->
+        <span id="span1">Habitt</span>
+        <br>
+        <!-- price aigi yahan  -->
+        <span>$240,000</span>
+      </a>
+        </div>
+        </div>
+        <div class="div6">
+    
+          <button id="button3" style="display: none;">ADD TO CART</button>
+          <!-- upper part  -->
+          <div id="div7">
+          <img src="image46825.webp">
+          </div>
+          <!-- lower part  -->
+          
+          <div id="div8">
+            <a href="product - Copy (2).html">
+          <!-- description aigi yahan  -->
+          <span> Piece of furniture has the ability to define the style of a personal living space</span> 
+          <br>
+          <!--company name aiga yahan -->
+          <span id="span1">Habitt</span>
+          <br>
+          <!-- price aigi yahan  -->
+          <span>$240,000</span>
+        </a>
+          </div>
+          </div>
+      
+          <!-- whole part  -->
+  <div class="div6">
+      <button id="button3" style="display: none;">ADD TO CART</button>
+      <!-- upper part  -->
+      <div id="div7">
+      <img src="image67685.webp">
+      </div>
+      <!-- lower part  -->
+      <div id="div8">
+        <a href="product - Copy (2).html">
+      <!-- description aigi yahan  -->
+      <span> Piece of furniture has the ability to define the style of a personal living space</span> 
+      <br>
+      <!--company name aiga yahan -->
+      <span id="span1">Habitt</span>
+      <br>
+      <!-- price aigi yahan  -->
+      <span>$240,000</span>
+    </a>
+      </div>
+    
+      </div>
+                <!-- whole part  -->
+  <div class="div6">
+    <button id="button3" style="display: none;">ADD TO CART</button>
+    <!-- upper part  -->
+    <div id="div7">
+    <img src="image54367.webp">
+    </div>
+    <!-- lower part  -->
+    <div id="div8">
+      <a href="product - Copy (2).html">
+    <!-- description aigi yahan  -->
+    <span> Piece of furniture has the ability to define the style of a personal living space</span> 
+    <br>
+    <!--company name aiga yahan -->
+    <span id="span1">Habitt</span>
+    <br>
+    <!-- price aigi yahan  -->
+    <span>$240,000</span>
+  </a>
+    </div>
+  
+    </div>
+    
+              <!-- whole part  -->
+  <div class="div6">
+    <button id="button3" style="display: none;">ADD TO CART</button>
+    <!-- upper part  -->
+    <div id="div7">
+    <img src="image83023.webp">
+    </div>
+    <!-- lower part  -->
+    <div id="div8">
+      <a href="product - Copy (2).html">
+    <!-- description aigi yahan  -->
+    <span> Piece of furniture has the ability to define the style of a personal living space</span> 
+    <br>
+    <!--company name aiga yahan -->
+    <span id="span1">Habitt</span>
+    <br>
+    <!-- price aigi yahan  -->
+    <span>$240,000</span>
+  </a>
+    </div>
+  
+    </div>
+    
+              <!-- whole part  -->
+  <div class="div6">
+    <button id="button3" style="display: none;">ADD TO CART</button>
+    <!-- upper part  -->
+    <div id="div7">
+    <img src="image86827.webp">
+    </div>
+    <!-- lower part  -->
+    <div id="div8">
+      <a href="product - Copy (2).html">
+    <!-- description aigi yahan  -->
+    <span> Piece of furniture has the ability to define the style of a personal living space</span> 
+    <br>
+    <!--company name aiga yahan -->
+    <span id="span1">Habitt</span>
+    <br>
+    <!-- price aigi yahan  -->
+    <span>$240,000</span>
+  </a>
+    </div>
+  
+    </div>
+    
+              <!-- whole part  -->
+  <div class="div6">
+    <button id="button3" style="display: none;">ADD TO CART</button>
+    <!-- upper part  -->
+    <div id="div7">
+    <img src="Sofa-with-Curved-Design-and-Deep-Stitching-Details,-Black.webp">
+    </div>
+    <!-- lower part  -->
+    <div id="div8">
+      <a href="product - Copy (2).html">
+    <!-- description aigi yahan  -->
+    <span> Piece of furniture has the ability to define the style of a personal living space</span> 
+    <br>
+    <!--company name aiga yahan -->
+    <span id="span1">Habitt</span>
+    <br>
+    <!-- price aigi yahan  -->
+    <span>$240,000</span>
+  </a>
+    </div>
+  
+    </div>
+    
+                    <!-- whole part  -->
+  <div class="div6">
+    <button id="button3" style="display: none;">ADD TO CART</button>
+    <!-- upper part  -->
+    <div id="div7">
+    <img src="image54367.webp">
+    </div>
+    <!-- lower part  -->
+    <div id="div8">
+      <a href="product - Copy (2).html">
+    <!-- description aigi yahan  -->
+    <span> Piece of furniture has the ability to define the style of a personal living space</span> 
+    <br>
+    <!--company name aiga yahan -->
+    <span id="span1">Habitt</span>
+    <br>
+    <!-- price aigi yahan  -->
+    <span>$240,000</span>
+  </a>
+    </div>
+  
+    </div>
+    
+         
+ 
+      
+      
+      </div>
+    <!--------------------------------->
+    <footer> 
+      <div class="main-content">
+        <div class="left box">
+          <h2>About us</h2>
+          
+          <div class="content">
+            
+            <div class="social">
+              <a href="#"><span class="fab fa-facebook-f"></span></a>
+              <a href="#"><span class="fab fa-twitter"></span></a>
+              <a href="#"><span class="fab fa-instagram"></span></a>
+              <a href="#"><span class="fab fa-youtube"></span></a>
+            </div>
+            <br><br>
+            Always on the look-out, we are constantly growing our catalog to offer you a wealth of fresh ideas and new finds each time you visit. Every day, we work to enable you to live life more fully through design and to help you through each phase of your own style evolution. Thanks for letting us be part of your journey!
+          </div>
+        </div>
+
+        <div class="center box">
+          <h2>Address</h2>
+          <div class="content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text">karachi, Pakistan</span>
+            </div>
+            <div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text">8909-5432100</span>
+            </div>
+            <div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text">SYASstyle@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="right box">
+          <h2>Contact us</h2>
+          <div class="content">
+            <form action="#">
+              <div class="email">
+                <div class="text">Email *</div>
+                <input type="email" required>
+              </div>
+              <div class="msg">
+                <div class="text">Message *</div>
+                <textarea rows="2" cols="25" required></textarea>
+              </div>
+              <div class="btn">
+                <button type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <center>
+          
+          <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+        </center>
+      </div>
+    </footer> 
+<script>
+document.getElementById("div_3").addEventListener("click",function()
+{
+var div3=document.getElementById("div3");
+if (div3.style.display==="block")
+{
+div3.style.display="none";
+}
+else
+{
+div3.style.display="block";
+}
+});
+document.getElementById("div_4").addEventListener("click",function()
+{
+var div4=document.getElementById("div4");
+if (div4.style.display==="block")
+{
+div4.style.display="none";
+}
+else
+{
+div4.style.display="block";
+}
+});
+document.getElementById("div_5").addEventListener("click",function()
+{
+var div5=document.getElementById("div55");
+if (div5.style.display==="block")
+{
+div5.style.display="none";
+}
+else
+{
+div5.style.display="block";
+}
+});
+
+//so query selector css ka whole selector ko pakar leta hai and is way faster than using classselector ye idselector kionke
+//unmein apko repeat karna paraga ye loop chalana paraga.
+        document.querySelectorAll(".div6").forEach(function(Item)
+        {
+            Item.addEventListener("mouseover",function()
+            {
+                Item.querySelector("#button3").style.display="block";
+            });
+                Item.querySelector("#button3").addEventListener("click",function()
+                {
+                    document.getElementById("diva").style.display="block";
+                    setTimeout(function() 
+                    {
+                    document.getElementById("diva").style.display = "none";
+                   }, 4000);
+                });
+                 Item.addEventListener("mouseout",function()
+                 {
+                    Item.querySelector("#button3").style.display="none";
+                 });
+        });
+   
+</script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <style>
+    body
+{
+    margin:0;padding:0
+}
+
+.menu-bar{
+  background-color: black;
+  text-align: center ;
+  margin: 0px 0 0 0;
+  height: 70px;
+}
+.menu-bar ul{
+  display: inline-flex;
+  list-style:none;
+  color: white;
+}
+.menu-bar ul li{
+  width: 100%;
+  margin: -4px -1px 10px 45px;
+  padding: 15px;
+ 
+}
+.menu-bar ul li a{
+  text-decoration: none;
+  color:white;
+ 
+}
+.active, .menu-bar ul li:hover{ 
+   background: rgb(34, 34, 34); 
+   border-radius: 1px; 
+   float: left;
+} 
+.sub-menu1{
+  display: none;
+  
+}
+.menu-bar ul li:hover .sub-menu1{
+  display: block;
+  position:absolute;
+  background:black;
+  margin:0px 0 0 -20px;
+}
+.menu-bar ul li:hover .sub-menu1 ul{
+  display: block;
+  margin: 0px;
+}
+.menu-bar ul li:hover .sub-menu1 ul li{
+  width: 100px;
+  padding: 10px;
+  border-bottom: 1px dotted lightcoral;
+  background: transparent;
+  border-radius: 0;
+ text-align:left;
+}
+.menu-bar ul li:hover .sub-menu1 ul li:last-child{
+border-bottom: none;
+}
+.menu-bar ul li:hover .sub-menu1 ul li a:hover{
+  color: grey;
+}
+.hum{
+  color:gray;
+  margin: -10px 0 0 -10%;
+}
+
+.container{
+    width:96%;
+    height:30px;
+    background: black;
+    padding: 2%;
+    display: flex;
+}
+form{
+    background: #fff;
+    width: 65%;
+    height: 55px;
+    position: absolute;
+    display: flex;
+}
+form input{
+    flex: 1;
+    border: none;
+    outline: none;
+
+}
+form button{
+    background: tomato;
+    padding: 10px 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.fa-magnifying-glass{
+    align-self: center;
+    padding: 10px 20px;
+   color:gray;
+   font-size: 20px;
+  
+}
+.fa-cart-shopping{
+    /* padding: 10px 20px; */
+    color: #777;
+    background-color: black;
+    font-size: 23px;
+    position: absolute;
+    margin:8px 0 0 -3%;
+}
+.fa-user{
+    color: #777;
+    background-color: black;
+     font-size: 23px;
+     position: absolute;
+     margin:7px 0 0 -6%;
+}
+
+.search-bar {
+    width: 94%;
+    height: 69px;
+    margin: -13px 0 0 10%;
+}
+.num{
+   color: gray;
+   font-size: 25px;
+   position: absolute;
+   margin:-20px 0 0  78% ;
+}
+
+
+.divsd
+{
+  font-family: Microsoft Yi Baiti;
+  font-size: 70px;
+  margin: 200px 0 0 0;
+  text-align: center;
+}
+.divad
+{
+  font-family: Microsoft Yi Baiti;
+  font-size: 60px;
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+footer{
+    color: #d9d9d9;
+    margin: 200px 0 0 0;
+    width: 100%;
+
+    background: #111;
+  }
+  .main-content{
+    display: flex;
+  }
+  .main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+  }
+  .box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+  }
+  .box .content:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+  }
+  .box .content:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #f12020;
+    top: -10px;
+  }
+  .left .content p{
+    text-align: justify;
+  }
+  .left .content .social{
+    margin: 20px 0 0 0;
+  }
+  .left .content .social a{
+    padding: 0 2px;
+  }
+  .left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .left .content .social a span:hover{
+    background: #f12020;
+  }
+  .center .content .fas{
+    font-size: 1.4375rem;
+    background: #1a1a1a;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .center .content .fas:hover{
+    background: #f12020;
+  }
+  .center .content .text{
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  .center .content .phone{
+    margin: 15px 0;
+  }
+  .right form .text{
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+    color: #656565;
+  }
+  .right form .msg{
+    margin-top: 10px;
+  }
+  .right form input, .right form textarea{
+    width: 100%;
+    font-size: 1.0625rem;
+    background: #151515;
+    padding-left: 10px;
+    border: 1px solid #222222;
+  }
+  .right form input:focus,
+  .right form textarea:focus{
+    outline-color: #3498db;
+  }
+  .right form input{
+    height: 35px;
+  }
+  .right form .btn{
+    margin-top: 10px;
+  }
+  .right form .btn button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #f12020;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .right form .btn button:hover{
+    background: #000;
+  }
+  .bottom center{
+    padding: 5px;
+    font-size: 0.9375rem;
+    background: #151515;
+  }
+  .bottom center span{
+    color: #656565;
+  }
+  .bottom center a{
+    color: #f12020;
+    text-decoration: none;
+  }
+  .bottom center a:hover{
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .main-content{
+      flex-wrap: wrap;
+      flex-direction: column;
+      
+    }
+    .main-content .box{
+      margin: 5px 0;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="divSEARCHBAR">
+    <a href="Home.html" target="_blank"><img src="0cecbf1b77394da080e548a97e797796.png" width="140px" height="80px" style="position: absolute; "></a>
+<div class="container">
+    <div class="search-bar">
+        <form>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="what are u looking for?">
+
+        <button type="submit">Search</button>
+    
+    
+        </div>  
+    <div class="num">
+      <p><b><a href="contactus.html">Contact</p></a></div></b>
+        <div class="icon">
+           <a href="checkout.html" target="_blank"><i class="fa-solid fa-cart-shopping"></a> </i>
+        </div>
+        <div class="icon">
+           <a href="signup.html" target="_blank"> <i class="fa-solid fa-user"></a></i>
+        </div>
+    </form>
+
+ </div>
+</div>
+<!-- <div class="icons">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <i class="fa-solid fa-user"></i>  -->
+    
+
+<!-- </div>  -->
+</div>
+</div>
+<div class="menu-bar">
+<ul>
+ <div class="hum"><i class="hover"> <svg xmlns="http://www.w3.org/2000/svg" width="50" height="60" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg></div></i>
+  <li class="hover"><a href="#"> <b>Habitt</b></a>
+      
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">L Shaped Sofa</a></li>
+          <li><a href="#">lawson Style Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">Oxford Sofa</a></li>
+      
+      </ul>
+  </div>
+  </li>
+  <li class="hover"><a href="#"><b>InterWood</b></a>
+       <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">Luxury Sofa</a></li>
+        <li><a href="#">Oxford Sofa</a></li> 
+           <li><a href="#">7 Seater Sofa</a></li>
+      </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>Maiden</b></a>
+       <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">L Shaped Sofa</a></li>
+          <li><a href="#">Oxford Sofa</a></li>
+         <li><a href="#">Sleeper Sofa</a></li> 
+       </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>DolceVita</b></a>
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+           <li><a href="#">L Shaped Sofa</a></li>
+          <li><a href="#">Oxford Sofa</a></li>
+          <li><a href="#">Sleeper Sofa</a></li>
+      </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>Safari</b></a>
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">L Shaped Sofa</a></li>
+           <li><a href="#">Oxford Sofa</a></li>
+          <li><a href="#">Sleeper Sofa</a></li> 
+      </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>Hamdrads</b></a>
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">L Shaped Sofa</a></li>
+          <li><a href="#">Oxford Sofa</a></li>
+           <li><a href="#">Sleeper Sofa</a></li>
+      </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>Salehab</b></a>
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">7 Seater Sofa</a></li>
+          <li><a href="#">Sectional Sofa</a></li>
+          <li><a href="#">Luxury Sofa</a></li>
+      </ul>
+  </div>
+</li>
+<li class="hover">
+<a href="#"><b>ModernArt</b></a>
+<div class="sub-menu1">
+<ul>
+  <li><a href="#">Single Sofa</a></li>
+  <li><a href="#">Double Sofa</a></li>
+  <li><a href="#">5 Seater Sofa</a></li>
+  <li><a href="#">7 Seater Sofa</a></li>
+  <li><a href="#">Sectional Sofa</a></li>
+  <li><a href="#">Luxury Sofa</a></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="divsd">
+  Thank you for Shopping with us!
+</div>
+<div class="divad">
+Order number #2141245
+</div>
+
+
+
+
+<footer> 
+  <div class="main-content">
+    <div class="left box">
+      <h2>About us</h2>
+      
+      <div class="content">
+        
+        <div class="social">
+          <a href="#"><span class="fab fa-facebook-f"></span></a>
+          <a href="#"><span class="fab fa-twitter"></span></a>
+          <a href="#"><span class="fab fa-instagram"></span></a>
+          <a href="#"><span class="fab fa-youtube"></span></a>
+        </div>
+        <br><br>
+        Always on the look-out, we are constantly growing our catalog to offer you a wealth of fresh ideas and new finds each time you visit. Every day, we work to enable you to live life more fully through design and to help you through each phase of your own style evolution. Thanks for letting us be part of your journey!
+      </div>
+    </div>
+
+    <div class="center box">
+      <h2>Address</h2>
+      <div class="content">
+        <div class="place">
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="text">karachi, Pakistan</span>
+        </div>
+        <div class="phone">
+          <span class="fas fa-phone-alt"></span>
+          <span class="text">8909-5432100</span>
+        </div>
+        <div class="email">
+          <span class="fas fa-envelope"></span>
+          <span class="text">SYASstyle@gmail.com</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="right box">
+      <h2>Contact us</h2>
+      <div class="content">
+        <form action="#">
+          <div class="email">
+            <div class="text">Email *</div>
+            <input type="email" required>
+          </div>
+          <div class="msg">
+            <div class="text">Message *</div>
+            <textarea rows="2" cols="25" required></textarea>
+          </div>
+          <div class="btn">
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <center>
+      
+      <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+    </center>
+  </div>
+</footer>
+</body>
+</html>

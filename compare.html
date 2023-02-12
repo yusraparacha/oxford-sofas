@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        td>img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+        }
+        .menu-bar{
+  background-color: black;
+  text-align: center ;
+  margin: 0px 0 0 0;
+  height: 70px;
+}
+.menu-bar ul{
+  display: inline-flex;
+  list-style:none;
+  color: white;
+}
+.menu-bar ul li{
+  width: 100%;
+  margin: -4px -1px 10px 45px;
+  padding: 15px;
+ 
+}
+.menu-bar ul li a{
+  text-decoration: none;
+  color:white;
+ 
+}
+.active, .menu-bar ul li:hover{ 
+   background: rgb(34, 34, 34); 
+   border-radius: 1px; 
+   float: left;
+} 
+.sub-menu1{
+  display: none;
+  
+}
+.menu-bar ul li:hover .sub-menu1{
+  display: block;
+  position:absolute;
+  background:black;
+  margin:0px 0 0 -20px;
+}
+.menu-bar ul li:hover .sub-menu1 ul{
+  display: block;
+  margin: 0px;
+}
+.menu-bar ul li:hover .sub-menu1 ul li{
+  width: 100px;
+  padding: 10px;
+  border-bottom: 1px dotted lightcoral;
+  background: transparent;
+  border-radius: 0;
+ text-align:left;
+}
+.menu-bar ul li:hover .sub-menu1 ul li:last-child{
+border-bottom: none;
+}
+.menu-bar ul li:hover .sub-menu1 ul li a:hover{
+  color: grey;
+}
+.hum{
+  color:gray;
+  margin: -10px 0 0 -10%;
+}
+
+.container{
+    width:96%;
+    height:30px;
+    background: black;
+    padding: 2%;
+    display: flex;
+}
+form{
+    background: #fff;
+    width: 65%;
+    height: 55px;
+    position: absolute;
+    display: flex;
+}
+form input{
+    flex: 1;
+    border: none;
+    outline: none;
+
+}
+form button{
+    background: tomato;
+    padding: 10px 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.fa-magnifying-glass{
+    align-self: center;
+    padding: 10px 20px;
+   color:gray;
+   font-size: 20px;
+  
+}
+.fa-cart-shopping{
+    /* padding: 10px 20px; */
+    color: #777;
+    background-color: black;
+    font-size: 23px;
+    position: absolute;
+    margin:8px 0 0 -3%;
+}
+.fa-user{
+    color: #777;
+    background-color: black;
+     font-size: 23px;
+     position: absolute;
+     margin:7px 0 0 -6%;
+}
+
+.search-bar {
+    width: 94%;
+    height: 69px;
+    margin: -13px 0 0 10%;
+}
+.num{
+   color: gray;
+   font-size: 25px;
+   position: absolute;
+   margin:-20px 0 0  78% ;
+}
+
+        footer{
+    color: #d9d9d9;
+    margin: 100px 0 0 0;
+    bottom: 0px;
+    width: 100%;
+    background: #111;
+  }
+  .main-content{
+    display: flex;
+  }
+  .main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+  }
+  .box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+  }
+  .box .content:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+  }
+  .box .content:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #f12020;
+    top: -10px;
+  }
+  .left .content p{
+    text-align: justify;
+  }
+  .left .content .social{
+    margin: 20px 0 0 0;
+  }
+  .left .content .social a{
+    padding: 0 2px;
+  }
+  .left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .left .content .social a span:hover{
+    background: #f12020;
+  }
+  .center .content .fas{
+    font-size: 1.4375rem;
+    background: #1a1a1a;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .center .content .fas:hover{
+    background: #f12020;
+  }
+  .center .content .text{
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  .center .content .phone{
+    margin: 15px 0;
+  }
+  .right form .text{
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+    color: #656565;
+  }
+  .right form .msg{
+    margin-top: 10px;
+  }
+  .right form input, .right form textarea{
+    width: 100%;
+    font-size: 1.0625rem;
+    background: #151515;
+    padding-left: 10px;
+    border: 1px solid #222222;
+  }
+  .right form input:focus,
+  .right form textarea:focus{
+    outline-color: #3498db;
+  }
+  .right form input{
+    height: 35px;
+  }
+  .right form .btn{
+    margin-top: 10px;
+  }
+  .right form .btn button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #f12020;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .right form .btn button:hover{
+    background: #000;
+  }
+  .bottom center{
+    padding: 5px;
+    font-size: 0.9375rem;
+    background: #151515;
+  }
+  .bottom center span{
+    color: #656565;
+  }
+  .bottom center a{
+    color: #f12020;
+    text-decoration: none;
+  }
+  .bottom center a:hover{
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .main-content{
+      flex-wrap: wrap;
+      flex-direction: column;
+      
+    }
+    .main-content .box{
+      margin: 5px 0;
+    }
+  }
+
+
+    </style>
+    <title>Title</title>
+</head>
+
+<body>
+
+    <div class="menu-bar">
+    <ul>
+     <div class="hum"><i class="hover"> <svg xmlns="http://www.w3.org/2000/svg" width="50" height="60" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg></div></i>
+      <li class="hover"><a href="#"> <b>Habitt</b></a>
+          
+          <div class="sub-menu1">
+          <ul>
+              <li><a href="#">Single Sofa</a></li>
+              <li><a href="#">Double Sofa</a></li>
+              <li><a href="#">L Shaped Sofa</a></li>
+              <li><a href="#">lawson Style Sofa</a></li>
+              <li><a href="#">5 Seater Sofa</a></li>
+              <li><a href="#">Oxford Sofa</a></li>
+          
+          </ul>
+      </div>
+      </li>
+      <li class="hover"><a href="#"><b>InterWood</b></a>
+           <div class="sub-menu1">
+          <ul>
+              <li><a href="#">Single Sofa</a></li>
+              <li><a href="#">Double Sofa</a></li>
+              <li><a href="#">5 Seater Sofa</a></li>
+              <li><a href="#">Luxury Sofa</a></li>
+            <li><a href="#">Oxford Sofa</a></li> 
+               <li><a href="#">7 Seater Sofa</a></li>
+          </ul>
+      </div> 
+      </li>
+      <li class="hover">
+          <a href="#"><b>Maiden</b></a>
+           <div class="sub-menu1">
+          <ul>
+              <li><a href="#">Single Sofa</a></li>
+              <li><a href="#">Double Sofa</a></li>
+              <li><a href="#">5 Seater Sofa</a></li>
+              <li><a href="#">L Shaped Sofa</a></li>
+              <li><a href="#">Oxford Sofa</a></li>
+             <li><a href="#">Sleeper Sofa</a></li> 
+           </ul>
+      </div> 
+      </li>
+      <li class="hover">
+          <a href="#"><b>DolceVita</b></a>
+          <div class="sub-menu1">
+          <ul>
+              <li><a href="#">Single Sofa</a></li>
+              <li><a href="#">Double Sofa</a></li>
+              <li><a href="#">5 Seater Sofa</a></li>
+               <li><a href="#">L Shaped Sofa</a></li>
+              <li><a href="#">Oxford Sofa</a></li>
+              <li><a href="#">Sleeper Sofa</a></li>
+          </ul>
+      </div> 
+      </li>
+      <li class="hover">
+          <a href="#"><b>Safari</b></a>
+          <div class="sub-menu1">
+          <ul>
+              <li><a href="#">Single Sofa</a></li>
+              <li><a href="#">Double Sofa</a></li>
+              <li><a href="#">5 Seater Sofa</a></li>
+              <li><a href="#">L Shaped Sofa</a></li>
+               <li><a href="#">Oxford Sofa</a></li>
+              <li><a href="#">Sleeper Sofa</a></li> 
+          </ul>
+      </div> 
+      </li>
+      <li class="hover">
+          <a href="#"><b>Hamdrads</b></a>
+          <div class="sub-menu1">
+          <ul>
+              <li><a href="#">Single Sofa</a></li>
+              <li><a href="#">Double Sofa</a></li>
+              <li><a href="#">5 Seater Sofa</a></li>
+              <li><a href="#">L Shaped Sofa</a></li>
+              <li><a href="#">Oxford Sofa</a></li>
+               <li><a href="#">Sleeper Sofa</a></li>
+          </ul>
+      </div> 
+      </li>
+      <li class="hover">
+          <a href="#"><b>Salehab</b></a>
+          <div class="sub-menu1">
+          <ul>
+              <li><a href="#">Single Sofa</a></li>
+              <li><a href="#">Double Sofa</a></li>
+              <li><a href="#">5 Seater Sofa</a></li>
+              <li><a href="#">7 Seater Sofa</a></li>
+              <li><a href="#">Sectional Sofa</a></li>
+              <li><a href="#">Luxury Sofa</a></li>
+          </ul>
+      </div>
+    </li>
+    <li class="hover">
+    <a href="#"><b>ModernArt</b></a>
+    <div class="sub-menu1">
+    <ul>
+      <li><a href="#">Single Sofa</a></li>
+      <li><a href="#">Double Sofa</a></li>
+      <li><a href="#">5 Seater Sofa</a></li>
+      <li><a href="#">7 Seater Sofa</a></li>
+      <li><a href="#">Sectional Sofa</a></li>
+      <li><a href="#">Luxury Sofa</a></li>
+    </ul>
+    </div>
+    </li>
+    </ul>
+    </div>
+    </div>
+    
+
+    <h1 class="display-5 my-5 text-center"><strong>Comparison Page for SYAS</strong></h1>
+    <div >
+        <div class="col-md-9 mx-auto">
+            <table class="table" >
+                <tr class="bg-dark">
+                    <th class="text-white">Select Product</th>
+                    <th width="300px">
+                        <select class="form-control" id="select1" onchange="item1(this.value)">
+                            <option value="0">-- Select Anyone --</option>
+                        </select>
+                    </th>
+                    <th width="300px">
+                        <select class="form-control" id="select2" onchange="item2(this.value)">
+                            <option value="0">-- Select Anyone --</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Product Image</th>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+                            id="img1" alt=" ">
+                    </td>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+                            id="img2" alt=" ">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="bg-dark text-white">Product Price</th>
+                    <td class="bg-dark text-white" id="price1">N/A</td>
+                    <td id="price2" class="bg-dark text-white">N/A</td>
+                </tr>
+                <tr class="bg-dark text-white">
+                    <th>Product Description</th>
+                    <td id="desc1">N/A</td>
+                    <td class="text-white" id="desc2">N/A</td>
+                </tr>
+                <tr class="bg-dark text-white">
+                    <th>Product Brand</th>
+                    <td id="brand1">N/A</td>
+                    <td id="brand2">N/A</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+    <footer> 
+        <div class="main-content">
+          <div class="left box">
+            <h2>About us</h2>
+            
+            <div class="content">
+              
+              <div class="social">
+                <a href="#"><span class="fab fa-facebook-f"></span></a>
+                <a href="#"><span class="fab fa-twitter"></span></a>
+                <a href="#"><span class="fab fa-instagram"></span></a>
+                <a href="#"><span class="fab fa-youtube"></span></a>
+              </div>
+              <br><br>
+              Always on the look-out, we are constantly growing our catalog to offer you a wealth of fresh ideas and new finds each time you visit. Every day, we work to enable you to live life more fully through design and to help you through each phase of your own style evolution. Thanks for letting us be part of your journey!
+            </div>
+          </div>
+  
+          <div class="center box">
+            <h2>Address</h2>
+            <div class="content">
+              <div class="place">
+                <span class="fas fa-map-marker-alt"></span>
+                <span class="text">karachi, Pakistan</span>
+              </div>
+              <div class="phone">
+                <span class="fas fa-phone-alt"></span>
+                <span class="text">8909-5432100</span>
+              </div>
+              <div class="email">
+                <span class="fas fa-envelope"></span>
+                <span class="text">SYASstyle@gmail.com</span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="right box">
+            <h2>Contact us</h2>
+            <div class="content">
+              <form action="#">
+                <div class="email">
+                  <div class="text">Email *</div>
+                  <input type="email" required>
+                </div>
+                <div class="msg">
+                  <div class="text">Message *</div>
+                  <textarea rows="2" cols="25" required></textarea>
+                </div>
+                <div class="btn">
+                  <button type="submit">Send</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <center>
+            
+            <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+          </center>
+        </div>
+      </footer>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js "></script> -->
+</body>
+
+</html>
+
+
+</body>
+<script >
+    var product = [
+    {
+        "id": 0,
+        "title": "",
+        "price": "",
+        "description": "",
+        "brand": "",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+    },
+    {
+        "id": 1,
+        "title": "Hester Sofa Set",
+        "design": "Hester",
+        "SKU": "GP880000104",
+        "Availability": "Out Of Stock",
+        "price": 179999,
+        "description": "Elevate the tech-compatibility of your space with the contemporary and stylish Hester sofa. Crafted from sturdy frame and fully upholstered in 100% polyester fabric, founded atop solid beech wood tapered and splayed legs, this loveseat features USB port on one of its square track arms, so you don’t run out of battery when playing with phone for long hours. High-quality thick foam cushioning with integrated sinuous spring offers a plush comfort while button-tufted accents align the back cushions for added texture. Designed to fit effortlessly into compact spaces, the clean silhouette of this charming piece lends a contemporary glam feel into any interior, making it perfect for bedrooms, living rooms, lounges, and more.",
+        "brand": "INTERWOOD",
+        "image": "https://images.alphacoders.com/462/thumb-1920-462286.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Sofa Kessel Set In Grey Colour",
+        "design": "Kessel",
+        "SKU": "GP880000037",
+        "Availability": "15 - 20 Working DaysInfo",
+        "price": 180000,
+        "description": "Exuding tranquillity and calmness, the Kessel sofa is a perfect pick for a cosy lounge, bedroom or even an office space. The beautiful grey shade options and angled tapered legs match any interior and instantly uplifts the environment around you. Kessel is made with supreme material for easy upkeep and plywood for additional support and is available in 1, 2, and 3 seater variants.",
+        "brand": "HABBIT    ",
+        "image": "https://c4.wallpaperflare.com/wallpaper/351/321/108/sofa-interior-pillow-interior-wallpaper-preview.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Sofa Noble Set In Navy Blue Velvet",
+        "design": "Noble",
+        "SKU": "GP880000034",
+        "Availability": "15 - 20 Working DaysInfo",
+        "price": 189000,
+        "description": "Many of us have an undeniable taste for classic furniture. Noble is one of those classic sofas that will bring vibrancy and a distinctive class to your living space. With a curved and tufted back, this sofa is another name for the style. Metal studs around the arms improve the prominence of its design. High-quality fabric will remain resistant to scratching and pilling.",
+        "brand": "HABBIT",
+        "image": "https://c4.wallpaperflare.com/wallpaper/371/606/402/living-room-furniture-ideas-gray-leather-sofa-wallpaper-preview.jpg"
+    }
+]
+</script>
+<script>
+
+    for (var i = 1; i < product.length; i++) {
+        console.log("ok");
+        document.getElementById("select1").innerHTML += `
+    <option value="${i}">${product[i].title}</option>
+    `;
+        document.getElementById("select2").innerHTML += `
+    <option value="${i}">${product[i].title}</option>
+    `;
+    }
+
+    function item1(a) {
+        var select2 = document.getElementById("select2").value;
+        console.log(select2);
+        console.log(a);
+        if (a != select2) {
+            document.getElementById("img1").src = product[a].image
+            document.getElementById("price1").innerHTML = "PKR " + product[a].price
+            document.getElementById("desc1").innerHTML = product[a].description
+            document.getElementById("brand1").innerHTML = product[a].brand
+
+        } else {
+            document.getElementById("select1").selectedIndex = 0;
+            let my = document.getElementById("select1").selectedIndex = 0;
+            console.log(my);
+            document.getElementById("img1").src = product[0].image
+            document.getElementById("price1").innerHTML = ""
+            document.getElementById("desc1").innerHTML = ""
+            document.getElementById("brand1").innerHTML = ""
+
+        }
+    }
+
+    function item2(a) {
+        var select1 = document.getElementById("select1").value;
+        if (a != select1) {
+            document.getElementById("img2").src = product[a].image
+            document.getElementById("price2").innerHTML = "PKR " + product[a].price
+            document.getElementById("desc2").innerHTML = product[a].description
+            document.getElementById("brand2").innerHTML = product[a].brand
+        } else {
+            document.getElementById("select2").selectedIndex = 0;
+            document.getElementById("img2").src = product[0].image
+            document.getElementById("price2").innerHTML = ""
+            document.getElementById("desc2").innerHTML = ''
+            document.getElementById("brand2").innerHTML = ""
+
+        }
+    }
+</script>
+
+</html>

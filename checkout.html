@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<style>
+body 
+{
+margin:0;padding:0;
+}
+.menu-bar{
+    background-color: black;
+    text-align: center ;
+    height: 70px;
+    z-index: 1000;
+}
+.menu-bar ul{
+    display: inline-flex;
+    list-style:none;
+    color: white;
+}
+.menu-bar ul li{
+    width: 100%;
+    margin: -4px -1px 10px 45px;
+    padding: 15px;
+   
+}
+.menu-bar ul li a{
+    text-decoration: none;
+    color:white;
+   
+}
+.active, .menu-bar ul li:hover{ 
+     background: rgb(34, 34, 34); 
+     border-radius: 1px; 
+     float: left;
+} 
+.sub-menu1{
+    display: none;
+    
+}
+.menu-bar ul li:hover .sub-menu1{
+    display: block;
+    position:absolute;
+    background:black;
+    margin:20px 0 0 -30px;
+}
+.menu-bar ul li:hover .sub-menu1 ul{
+    display: block;
+    margin: 0px;
+}
+.menu-bar ul li:hover .sub-menu1 ul li{
+    width: 100px;
+    padding: 10px;
+    border-bottom: 1px dotted lightcoral;
+    background: transparent;
+    border-radius: 0;
+   text-align:left;
+}
+.menu-bar ul li:hover .sub-menu1 ul li:last-child{
+border-bottom: none;
+}
+.menu-bar ul li:hover .sub-menu1 ul li a:hover{
+    color: grey;
+}
+.hum{
+    color:gray;
+    margin: -10px 0 0 -10%;
+}
+#diva /* popout cart whole  */
+{
+    width:20%;
+    height: 330px;
+    padding: 10px 0 0 0;
+    margin:0 25px 0 0%;
+    position: absolute;
+}
+.divb /* img */
+{
+    width:135%;
+    margin: -30px 0 0 0;
+    position: absolute;
+    border: 1px solid rgba(216, 138, 74, 0.281);
+}
+.divb img
+{
+    object-fit: cover;
+    padding: 2% 2% 1% 2%;
+    width: 18%;
+    height: 70px;
+}
+.spanc /* bold properties */
+{
+    position: absolute;
+    margin: 3px 0 0 105%;
+    font-family: 'Myanmar Text';
+    line-height: 25px;
+    font-size: 15px;
+    width: fit-content;
+    height: fit-content;
+    white-space:nowrap;
+}
+a
+{
+    color: black;
+    font-weight: bold;
+    cursor: grab;
+}
+.spand /* a link for sofa */
+{
+    margin: 4px 9px 0 30%;
+    font-size: 15px;
+    height: 45px;
+}
+.divc /* line */
+{
+    width: 365px;
+    height: 1.5px;
+    position: relative;
+    margin: 50px 0 0 0;
+    background-color: rgba(0, 0, 0, 0.63);
+}
+.divd /* subtotal */
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 24px 0 0 0;
+    font-family: Microsoft Yi Baiti;
+    font-size: 23px;
+    font-weight: bold;
+}
+.divd span
+{
+    margin: 0 80% 0 0;
+}
+.dive
+{
+    margin: 30px 0 0 10%;
+}
+.dive button
+{
+    background-color: rgba(216, 138, 74, 0.808);
+    border: none;
+    padding: 0 1% 1% 1%;
+    font-weight: bold;
+    font-size: 33px;
+    height: 45px;
+    border-radius: 3px;
+    width: 305px;
+    font-family: Microsoft Yi Baiti;
+}
+.dive button:hover
+{
+  transform: scale(1.01);
+   
+}
+
+.div19
+{
+    z-index: 800;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 6% 0 0 0;
+    justify-content: center;
+    height: 1000px;
+}
+.div20 /* first box */
+{
+    border: 1px solid rgba(216, 138, 74, 0.808);
+    width: 27%;
+    height: 675px;
+    margin: 0 20px 0 0;
+    padding: 1%;  
+}
+.div20 input
+{
+    margin:52px 0 -10px 0;
+    padding: 8px;
+    width: 95%;
+    font-size: 16px;
+    border: 1px solid rgba(216, 138, 74, 0.808);
+	border-radius:3px;
+}
+.div20 label
+{
+    
+    font-size: 15px;
+    margin: 30px 0 0 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+}
+.span1 /* customer info */
+{
+    font-size: 36px;
+    margin: -1px 0px 0px 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    float: right;
+}
+.span2 /* all feilds are required */
+{
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    float: left;
+    color: rgba(0, 0, 0, 0.555);
+    font-weight: bold;
+    margin: 25px 0 -10px 0;
+}
+.span3  /* same as billing address */
+{
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    float: left;
+    color: rgba(0, 0, 0, 0.555);
+    font-weight: bold;
+    margin: 25px 0px 0px 25px;  
+}
+.div21 /* line */
+{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin: 47px 0 0 0;
+}
+.div22 /* circle */
+{
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(216, 138, 74, 0.808);
+    color: white;
+    font-size: 34px;
+    text-align: center;
+    margin: -48px 0 0 5px;
+}
+.div23 /* second box */
+{
+    border: 1px solid rgba(216, 138, 74, 0.808);
+    width: 27%;
+    height: 490px;
+    margin: 0 20px 0 0;
+    padding: 1%; 
+}
+.div23 input
+{
+    margin:49px 0 -10px 0;
+    padding: 10px;
+    width: 90%;
+    font-size: 16px;
+    border: 1px solid rgba(216, 138, 74, 0.808);
+	border-radius:3px;
+}
+.div23 label
+{
+    font-size: 15px;
+    margin: 25px 0 0 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+}
+#div24 /* whole form for second box */
+{
+    margin:6    0px 0 0 0;
+}
+#div24 input
+{
+    margin:10px 0 0px 0;
+    width: 30px;
+    border: 1px solid rgba(216, 138, 74, 0.808);
+}
+#div24 label
+{
+    font-size: 20px;
+    margin:3px 0 0 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: absolute;
+}
+.div26 /* third box  */
+{
+    border: 1px solid rgba(216, 138, 74, 0.808);
+    width: 27%;
+    height: 420px;
+    margin: 0 20px 0 0;
+    padding: 1%;
+    
+}
+footer{
+    color: #d9d9d9;
+    margin: -190px 0 0 0;
+    width: 100%;
+    background: #111;
+  }
+  .main-content{
+    display: flex;
+  }
+  .main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+  }
+  .box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+  }
+  .box .content:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+  }
+  a
+  {
+    text-decoration: none;
+  }
+  .box .content:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #f12020;
+    top: -10px;
+  }
+  .left .content p{
+    text-align: justify;
+  }
+  .left .content .social{
+    margin: 20px 0 0 0;
+  }
+  .left .content .social a{
+    padding: 0 2px;
+  }
+  .left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .left .content .social a span:hover{
+    background: #f12020;
+  }
+  .center .content .fas{
+    font-size: 1.4375rem;
+    background: #1a1a1a;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .center .content .fas:hover{
+    background: #f12020;
+  }
+  .center .content .text{
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  .center .content .phone{
+    margin: 15px 0;
+  }
+  .right form .text{
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+    color: #656565;
+  }
+  .right form .msg{
+    margin-top: 10px;
+  }
+  .right form input, .right form textarea{
+    width: 100%;
+    font-size: 1.0625rem;
+    background: #151515;
+    padding-left: 10px;
+    border: 1px solid #222222;
+  }
+  .right form input:focus,
+  .right form textarea:focus{
+    outline-color: #3498db;
+  }
+  .right form input{
+    height: 35px;
+  }
+  .right form .btn{
+    margin-top: 10px;
+  }
+  .right form .btn button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #f12020;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .right form .btn button:hover{
+    background: #000;
+  }
+  .bottom center{
+    padding: 5px;
+    font-size: 0.9375rem;
+    background: #151515;
+  }
+  .bottom center span{
+    color: #656565;
+  }
+  .bottom center a{
+    color: #f12020;
+    text-decoration: none;
+  }
+  .bottom center a:hover{
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .main-content{
+      flex-wrap: wrap;
+      flex-direction: column;
+      
+    }
+    .main-content .box{
+      margin: 5px 0;
+    }
+  }
+</style>
+</head>
+<body>
+    <div class="menu-bar">
+        <ul>
+           <div class="hum"><i class="hover"> <svg xmlns="http://www.w3.org/2000/svg" width="50" height="60" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg></div></i>
+            <li class="hover"><a href="#"> <b>Habitt</b></a>
+                
+                <div class="sub-menu1">
+                <ul>
+                    <li><a href="#">Single Sofa</a></li>
+                    <li><a href="#">Double Sofa</a></li>
+                    <li><a href="#">L Shaped Sofa</a></li>
+                    <li><a href="#">lawson Style Sofa</a></li>
+                    <li><a href="#">5 Seater Sofa</a></li>
+                    <li><a href="#">Oxford Sofa</a></li>
+                
+                </ul>
+            </div>
+            </li>
+            <li class="hover"><a href="#"><b>InterWood</b></a>
+                 <div class="sub-menu1">
+                <ul>
+                    <li><a href="#">Single Sofa</a></li>
+                    <li><a href="#">Double Sofa</a></li>
+                    <li><a href="#">5 Seater Sofa</a></li>
+                    <li><a href="#">Luxury Sofa</a></li>
+                  <li><a href="#">Oxford Sofa</a></li> 
+                     <li><a href="#">7 Seater Sofa</a></li>
+                </ul>
+            </div> 
+            </li>
+            <li class="hover">
+                <a href="#"><b>Maiden</b></a>
+                 <div class="sub-menu1">
+                <ul>
+                    <li><a href="#">Single Sofa</a></li>
+                    <li><a href="#">Double Sofa</a></li>
+                    <li><a href="#">5 Seater Sofa</a></li>
+                    <li><a href="#">L Shaped Sofa</a></li>
+                    <li><a href="#">Oxford Sofa</a></li>
+                   <li><a href="#">Sleeper Sofa</a></li> 
+                 </ul>
+            </div> 
+            </li>
+            <li class="hover">
+                <a href="#"><b>DolceVita</b></a>
+                <div class="sub-menu1">
+                <ul>
+                    <li><a href="#">Single Sofa</a></li>
+                    <li><a href="#">Double Sofa</a></li>
+                    <li><a href="#">5 Seater Sofa</a></li>
+                     <li><a href="#">L Shaped Sofa</a></li>
+                    <li><a href="#">Oxford Sofa</a></li>
+                    <li><a href="#">Sleeper Sofa</a></li>
+                </ul>
+            </div> 
+            </li>
+            <li class="hover">
+                <a href="#"><b>Safari</b></a>
+                <div class="sub-menu1">
+                <ul>
+                    <li><a href="#">Single Sofa</a></li>
+                    <li><a href="#">Double Sofa</a></li>
+                    <li><a href="#">5 Seater Sofa</a></li>
+                    <li><a href="#">L Shaped Sofa</a></li>
+                     <li><a href="#">Oxford Sofa</a></li>
+                    <li><a href="#">Sleeper Sofa</a></li> 
+                </ul>
+            </div> 
+            </li>
+            <li class="hover">
+                <a href="#"><b>Hamdrads</b></a>
+                <div class="sub-menu1">
+                <ul>
+                    <li><a href="#">Single Sofa</a></li>
+                    <li><a href="#">Double Sofa</a></li>
+                    <li><a href="#">5 Seater Sofa</a></li>
+                    <li><a href="#">L Shaped Sofa</a></li>
+                    <li><a href="#">Oxford Sofa</a></li>
+                     <li><a href="#">Sleeper Sofa</a></li>
+                </ul>
+            </div> 
+            </li>
+            <li class="hover">
+                <a href="#"><b>Salehab</b></a>
+                <div class="sub-menu1">
+                <ul>
+                    <li><a href="#">Single Sofa</a></li>
+                    <li><a href="#">Double Sofa</a></li>
+                    <li><a href="#">5 Seater Sofa</a></li>
+                    <li><a href="#">7 Seater Sofa</a></li>
+                    <li><a href="#">Sectional Sofa</a></li>
+                    <li><a href="#">Luxury Sofa</a></li>
+                </ul>
+            </div>
+        </li>
+    <li class="hover">
+        <a href="#"><b>ModernArt</b></a>
+        <div class="sub-menu1">
+        <ul>
+            <li><a href="#">Single Sofa</a></li>
+            <li><a href="#">Double Sofa</a></li>
+            <li><a href="#">5 Seater Sofa</a></li>
+            <li><a href="#">7 Seater Sofa</a></li>
+            <li><a href="#">Sectional Sofa</a></li>
+            <li><a href="#">Luxury Sofa</a></li>
+        </ul>
+    </div>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="div19">
+
+<div class="div20">
+<span class="span1">Delivery Information</span>
+<span class="span2">All fields are required</span>
+<div class="div21"></div>
+<div class="div22">1</div>
+<form>
+<label> First Name </label><input type="text">
+<br>
+<label> Last Name* </label><input type="text">
+<br>
+<label> Email Address* </label><input type="email">
+<br>
+<label> Telephone* </label><input type="number">
+<br>
+<label> Delivery Address* </label><input type="text">
+<br>
+<label> City-Province*</label><input type="text">
+<br>
+<label> Country* </label><input type="text">
+</form>
+<input type="checkbox" style="margin: 28px 0 0 -360px;"><span class="span3">Same as billing address</span>
+</div>
+
+<div class="div23">
+<span class="span1">Payment Method</span>
+<div class="div21"></div>
+<div class="div22">2</div>
+<span class="span2">Only one type of billing can be used.</span>
+<div id="div24">
+<form>
+<br><br><br>
+<input type="radio" name="selection"> <label>Cash on Delivery</label>
+<br>
+<input type="radio" name="selection"> <label>Credit Card</label>
+</form>
+</div>
+
+<form>
+    <label> Card holder name </label><input type="text">
+    <br>
+    <label> Credit card number* </label><input type="text">
+    <br>
+    <label> Expiration date* </label><input type="text" style="width: 22%;" placeholder="7/08"> 
+    <label style="margin: 25px 0 0 30px;"> Security code* </label><input type="number" style="width: 20%; margin: 0 0 0 30px;" placeholder="925">
+
+    </form>
+    <input type="checkbox" style="margin: 28px 0 0 -520px;"><span class="span3">I have read and agree to the terms and conditions and hereby give authority to use them against me</span>
+</div>
+
+<div class="div26">
+<span class="span1">Order Overview</span>
+<div class="div21"></div>
+<div class="div22">3</div>
+<div id="diva">
+
+<br><br><br>
+    <div class="divb"> <img src="https://images.thdstatic.com/productImages/97775315-f28c-4a8e-9cdc-dbd86dd486de/svn/seafoam-green-cosmoliving-by-cosmopolitan-sofas-dl065-sf-64_400.jpg"></div>
+    
+    <div class="spanc">Quantity: 1</div>
+    <div class="spand"><a href="https://www.w3schools.com">Forver leather - Habitt</a><br>14 USD</div>
+
+
+    <br><br>  
+    <div class="divb"> <img src="https://images.thdstatic.com/productImages/97775315-f28c-4a8e-9cdc-dbd86dd486de/svn/seafoam-green-cosmoliving-by-cosmopolitan-sofas-dl065-sf-64_400.jpg"></div>
+    
+    <div class="spanc">Quantity: 1</div>
+    <div class="spand"><a href="asd.com">Forver leather - Habitt</a><br>14 USD</div>
+    
+    <div class="divc">
+    </div>
+    
+    <div class="divd">
+    <span>Subtotal</span>
+    <span>($24.99)</span>
+    </div>
+    
+    <div class="dive">
+    <button><a href="orderplaced.html" target="_blank">Place Order</a></button>
+    </div>
+    
+    </div>
+</div>
+
+    </div>
+    <footer> 
+      <div class="main-content">
+        <div class="left box">
+          <h2>About us</h2>
+          
+          <div class="content">
+            
+            <div class="social">
+              <a href="#"><span class="fab fa-facebook-f"></span></a>
+              <a href="#"><span class="fab fa-twitter"></span></a>
+              <a href="#"><span class="fab fa-instagram"></span></a>
+              <a href="#"><span class="fab fa-youtube"></span></a>
+            </div>
+            <br><br>
+            Always on the look-out, we are constantly growing our catalog to offer you a wealth of fresh ideas and new finds each time you visit. Every day, we work to enable you to live life more fully through design and to help you through each phase of your own style evolution. Thanks for letting us be part of your journey!
+          </div>
+        </div>
+
+        <div class="center box">
+          <h2>Address</h2>
+          <div class="content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text">karachi, Pakistan</span>
+            </div>
+            <div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text">8909-5432100</span>
+            </div>
+            <div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text">SYASstyle@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="right box">
+          <h2>Contact us</h2>
+          <div class="content">
+            <form action="#">
+              <div class="email">
+                <div class="text">Email *</div>
+                <input type="email" required>
+              </div>
+              <div class="msg">
+                <div class="text">Message *</div>
+                <textarea rows="2" cols="25" required></textarea>
+              </div>
+              <div class="btn">
+                <button type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <center>
+          
+          <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+        </center>
+      </div>
+    </footer>
+
+</body>
+</html>

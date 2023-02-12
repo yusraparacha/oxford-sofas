@@ -1,0 +1,772 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<style>
+body
+{
+    margin:0;padding:0
+}
+.menu-bar{
+  background-color: black;
+  text-align: center ;
+  margin: 0px 0 0 0;
+  height: 70px;
+}
+.menu-bar ul{
+  display: inline-flex;
+  list-style:none;
+  color: white;
+}
+.menu-bar ul li{
+  width: 100%;
+  margin: -4px -1px 10px 45px;
+  padding: 15px;
+ 
+}
+.menu-bar ul li a{
+  text-decoration: none;
+  color:white;
+ 
+}
+.active, .menu-bar ul li:hover{ 
+   background: rgb(34, 34, 34); 
+   border-radius: 1px; 
+   float: left;
+} 
+.sub-menu1{
+  display: none;
+  
+}
+.menu-bar ul li:hover .sub-menu1{
+  display: block;
+  position:absolute;
+  background:black;
+  margin:0px 0 0 -20px;
+}
+.menu-bar ul li:hover .sub-menu1 ul{
+  display: block;
+  margin: 0px;
+}
+.menu-bar ul li:hover .sub-menu1 ul li{
+  width: 100px;
+  padding: 10px;
+  border-bottom: 1px dotted lightcoral;
+  background: transparent;
+  border-radius: 0;
+ text-align:left;
+}
+.menu-bar ul li:hover .sub-menu1 ul li:last-child{
+border-bottom: none;
+}
+.menu-bar ul li:hover .sub-menu1 ul li a:hover{
+  color: grey;
+}
+.hum{
+  color:gray;
+  margin: -10px 0 0 -10%;
+}
+
+.container{
+    width:96%;
+    height:30px;
+    background: black;
+    padding: 2%;
+    display: flex;
+}
+form{
+    background: #fff;
+    width: 65%;
+    height: 55px;
+    position: absolute;
+    display: flex;
+}
+form input{
+    flex: 1;
+    border: none;
+    outline: none;
+
+}
+form button{
+    background: tomato;
+    padding: 10px 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.fa-magnifying-glass{
+    align-self: center;
+    padding: 10px 20px;
+   color:gray;
+   font-size: 20px;
+  
+}
+.fa-cart-shopping{
+    /* padding: 10px 20px; */
+    color: #777;
+    background-color: black;
+    font-size: 23px;
+    position: absolute;
+    margin:8px 0 0 -3%;
+}
+.fa-user{
+    color: #777;
+    background-color: black;
+     font-size: 23px;
+     position: absolute;
+     margin:7px 0 0 -6%;
+}
+
+.search-bar {
+    width: 94%;
+    height: 69px;
+    margin: -13px 0 0 10%;
+}
+.num{
+   color: gray;
+   font-size: 25px;
+   position: absolute;
+   margin:-20px 0 0  78% ;
+}
+
+
+#div1 /* Hello div */
+{
+    width:100%;
+    height: 300px;
+    margin-top: 150px;
+    line-height: 40px;
+    text-align: center;
+}
+#div1 img
+{
+    margin: -100px 0 0 0;
+}
+#span1 /* contact syas  */
+{
+   font-size: 50px;
+   margin: -40px 0 0 0 ;
+   font-family: 'Times New Roman', Times, serif;
+}
+#span2 /* aga ka text */
+{
+   font-size: 20px;
+   margin: 10px 0 0 35%;
+   width: 30%;
+   line-height:30px;
+   height: fit-content;
+   font-family: 'Times New Roman', Times, serif;
+}
+.div1 /* whole slant div */
+{
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    background-color: rgba(216, 138, 74, 0.514);
+    transform: skewY(3deg);
+}
+.div2 /* white div inside slant */
+{
+    width: 30%;
+    height: 360px;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin: 7.5% 0 0 10%;
+}
+.div2 button
+{
+    position: absolute;
+    margin: 140px 0 0 0 ;
+}
+#div2 /* line insdide white */
+{
+    width: 90%;
+    height: 1px;
+    background-color: rgba(216, 138, 74, 0.808);
+    position: absolute;
+    margin: 90px 0 0 0;
+}
+#span3  /* get in touch with us */
+{
+    width: fit-content;
+    height: fit-content;
+    font-size: 40px;
+    position: absolute;  
+    margin: 23 0 0 0;
+}
+.bi:hover
+{
+    cursor:grab;
+}
+#div3 /* icons div */
+{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: fit-content;
+    margin: 140 0 0 -40%;
+    justify-content: center;
+    position: absolute;
+}
+#div4 /* front of icon text */
+{
+    font-size: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: fit-content;
+    margin: 120 0 0 15%;
+    justify-content: center;
+    position: absolute;
+    line-height: 60px;
+}
+#span4 /*email*/
+{
+    cursor: grab;
+}
+#span5 /* feedback */
+{
+    position: absolute;
+    margin: 335px 0 0 0;
+    font-size: 12px;
+}
+#div7 /* maps div */
+{
+    display: flex;
+    margin: 0 0 0 43%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    transform: skewY(-3deg);
+}
+.Map1 /* map */
+{
+    width: 22%;
+    height: 200px;
+    margin: 75px 5% 0 0;
+}
+#div5 /* our locations */
+{
+    transform: skewY(-3deg);
+    position: absolute;
+    margin: 80px 0 0 63%;
+    font-size: 35px;
+    width: fit-content;
+    height: fit-content;
+}
+#div6 /* flags*/
+{
+    display: flex;
+    transform: skewY(-3deg);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 0 0 0 48.5%;
+}
+#div6 img
+{
+    margin: 150px 26% 0 0;
+    position: relative;
+}
+#div8 /* countries */
+{
+    transform: skewY(-3deg);
+    position: absolute;
+    display: flex;
+    margin: -295px 0 0 54%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    font-size: 20px;
+    width: 38%;
+    white-space: nowrap;
+    font-family: 'Microsoft Yi Baiti';
+}
+#div8 span
+{
+    margin: 0 25% 0 0;
+}
+#div9
+{
+    transform: skewY(-3deg);
+    position: absolute;
+    display: flex;
+    font-weight: bold;
+    margin: -250px 0 0 48.5%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    font-size: 17px;
+    height: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    white-space: nowrap;
+}
+#div9 span
+{
+    margin: 0 10% 0 0;
+    font-family: 'Microsoft Yi Baiti';
+}
+footer{
+    color: #d9d9d9;
+    margin: 750px 0 0 0;
+    width: 100%;
+    background: #111;
+  }
+  .main-content{
+    display: flex;
+  }
+  .main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+  }
+  .box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+  }
+  .box .content:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+  }
+  .box .content:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #f12020;
+    top: -10px;
+  }
+  .left .content p{
+    text-align: justify;
+  }
+  .left .content .social{
+    margin: 20px 0 0 0;
+  }
+  .left .content .social a{
+    padding: 0 2px;
+  }
+  .left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .left .content .social a span:hover{
+    background: #f12020;
+  }
+  .center .content .fas{
+    font-size: 1.4375rem;
+    background: #1a1a1a;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .center .content .fas:hover{
+    background: #f12020;
+  }
+  .center .content .text{
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  .center .content .phone{
+    margin: 15px 0;
+  }
+  .right form .text{
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+    color: #656565;
+  }
+  .right form .msg{
+    margin-top: 10px;
+  }
+  .right form input, .right form textarea{
+    width: 100%;
+    font-size: 1.0625rem;
+    background: #151515;
+    padding-left: 10px;
+    border: 1px solid #222222;
+  }
+  .right form input:focus,
+  .right form textarea:focus{
+    outline-color: #3498db;
+  }
+  .right form input{
+    height: 35px;
+  }
+  .right form .btn{
+    margin-top: 10px;
+  }
+  .right form .btn button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #f12020;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .right form .btn button:hover{
+    background: #000;
+  }
+  .bottom center{
+    padding: 5px;
+    font-size: 0.9375rem;
+    background: #151515;
+  }
+  .bottom center span{
+    color: #656565;
+  }
+  .bottom center a{
+    color: #f12020;
+    text-decoration: none;
+  }
+  .bottom center a:hover{
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .main-content{
+      flex-wrap: wrap;
+      flex-direction: column;
+      
+    }
+    .main-content .box{
+      margin: 5px 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="divSEARCHBAR">
+    <a href="Home.html" target="_blank"><img src="0cecbf1b77394da080e548a97e797796.png" width="140px" height="80px" style="position: absolute; "></a>
+<div class="container">
+    <div class="search-bar">
+        <form>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="what are u looking for?">
+
+        <button type="submit">Search</button>
+    
+    
+        </div>  
+    <div class="num">
+      <p><b><a href="contactus.html">Contact</p></a></div></b>
+        <div class="icon">
+           <a href="checkout.html" target="_blank"><i class="fa-solid fa-cart-shopping"></a> </i>
+        </div>
+        <div class="icon">
+           <a href="signup.html" target="_blank"> <i class="fa-solid fa-user"></a></i>
+        </div>
+    </form>
+
+ </div>
+</div>
+<!-- <div class="icons">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <i class="fa-solid fa-user"></i>  -->
+    
+
+<!-- </div>  -->
+</div>
+</div>
+<div class="menu-bar">
+<ul>
+ <div class="hum"><i class="hover"> <svg xmlns="http://www.w3.org/2000/svg" width="50" height="60" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg></div></i>
+  <li class="hover"><a href="#"> <b>Habitt</b></a>
+      
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">L Shaped Sofa</a></li>
+          <li><a href="#">lawson Style Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">Oxford Sofa</a></li>
+      
+      </ul>
+  </div>
+  </li>
+  <li class="hover"><a href="#"><b>InterWood</b></a>
+       <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">Luxury Sofa</a></li>
+        <li><a href="#">Oxford Sofa</a></li> 
+           <li><a href="#">7 Seater Sofa</a></li>
+      </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>Maiden</b></a>
+       <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">L Shaped Sofa</a></li>
+          <li><a href="#">Oxford Sofa</a></li>
+         <li><a href="#">Sleeper Sofa</a></li> 
+       </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>DolceVita</b></a>
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+           <li><a href="#">L Shaped Sofa</a></li>
+          <li><a href="#">Oxford Sofa</a></li>
+          <li><a href="#">Sleeper Sofa</a></li>
+      </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>Safari</b></a>
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">L Shaped Sofa</a></li>
+           <li><a href="#">Oxford Sofa</a></li>
+          <li><a href="#">Sleeper Sofa</a></li> 
+      </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>Hamdrads</b></a>
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">L Shaped Sofa</a></li>
+          <li><a href="#">Oxford Sofa</a></li>
+           <li><a href="#">Sleeper Sofa</a></li>
+      </ul>
+  </div> 
+  </li>
+  <li class="hover">
+      <a href="#"><b>Salehab</b></a>
+      <div class="sub-menu1">
+      <ul>
+          <li><a href="#">Single Sofa</a></li>
+          <li><a href="#">Double Sofa</a></li>
+          <li><a href="#">5 Seater Sofa</a></li>
+          <li><a href="#">7 Seater Sofa</a></li>
+          <li><a href="#">Sectional Sofa</a></li>
+          <li><a href="#">Luxury Sofa</a></li>
+      </ul>
+  </div>
+</li>
+<li class="hover">
+<a href="#"><b>ModernArt</b></a>
+<div class="sub-menu1">
+<ul>
+  <li><a href="#">Single Sofa</a></li>
+  <li><a href="#">Double Sofa</a></li>
+  <li><a href="#">5 Seater Sofa</a></li>
+  <li><a href="#">7 Seater Sofa</a></li>
+  <li><a href="#">Sectional Sofa</a></li>
+  <li><a href="#">Luxury Sofa</a></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- hello div -->
+<div id="div1">
+<img src="2023-02-01.png">
+<p id="span1">Contact SYAS</p>
+<p id="span2">We're here to help with any questions you have. We look forward to hearing from you</p>
+</div> 
+
+<!-- slant div -->
+<div class="div1">
+<div id="div5">Our locations</div>
+<div id="div6">
+<img src="https://flagicons.lipis.dev/flags/4x3/de.svg" width="4%">
+<img src="https://flagicons.lipis.dev/flags/4x3/ma.svg" width="4%">
+<img src="https://flagicons.lipis.dev/flags/4x3/it.svg" width="4%">
+</div>
+<div id="div7">
+<div id="map1" class="Map1"></div>
+<div id="map2" class="Map1"></div>
+<div id="map3" class="Map1"></div>
+</div>
+<div id="div8">
+<span>- Germany</span>
+<span>- Morocco</span>
+<span>- Italy</span>
+</div>
+<div id="div9">
+<span>Edelweißstr. 8 c o <br> Düzgün, 81541 München</span>
+<span>V9G4+CH Rome, <br>Metropolitan City</span>
+<span>&nbsp; &nbsp; &nbsp;&nbsp;  Centre commercial Al<br>&nbsp; &nbsp; &nbsp; &nbsp;  Mazar, Route de l'Ourika</span>
+</div>
+</div>  
+
+<!-- white div inside slant -->
+<div class="div2">
+<p id="span3">Get in touch with us</p>
+<div id="div2"></div>
+<div id="div3">
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-envelope-open" viewBox="0 0 16 16" onclick="email()">
+<path d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.817l5.75 3.45L8 8.917l1.25.75L15 6.217V5.4a1 1 0 0 0-.53-.882l-6-3.2ZM15 7.383l-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734ZM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2Z"/>
+</svg>
+<br><br>
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+<path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+<path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+</svg>
+<br><br>
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+<path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+</svg>
+</div> 
+<div id="div4">
+<span onclick="email()" id="span4">SYAS@gmail.com</span>
+<span>+49 2324326540</span>
+<span>+49 2156774257</span>
+</div>
+<span id="span5">Your feedback matters to us. Reach out to us now!</span>
+
+</div>
+<footer> 
+  <div class="main-content">
+    <div class="left box">
+      <h2>About us</h2>
+      
+      <div class="content">
+        
+        <div class="social">
+          <a href="#"><span class="fab fa-facebook-f"></span></a>
+          <a href="#"><span class="fab fa-twitter"></span></a>
+          <a href="#"><span class="fab fa-instagram"></span></a>
+          <a href="#"><span class="fab fa-youtube"></span></a>
+        </div>
+        <br><br>
+        Always on the look-out, we are constantly growing our catalog to offer you a wealth of fresh ideas and new finds each time you visit. Every day, we work to enable you to live life more fully through design and to help you through each phase of your own style evolution. Thanks for letting us be part of your journey!
+      </div>
+    </div>
+
+    <div class="center box">
+      <h2>Address</h2>
+      <div class="content">
+        <div class="place">
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="text">karachi, Pakistan</span>
+        </div>
+        <div class="phone">
+          <span class="fas fa-phone-alt"></span>
+          <span class="text">8909-5432100</span>
+        </div>
+        <div class="email">
+          <span class="fas fa-envelope"></span>
+          <span class="text">SYASstyle@gmail.com</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="right box">
+      <h2>Contact us</h2>
+      <div class="content">
+        <form action="#">
+          <div class="email">
+            <div class="text">Email *</div>
+            <input type="email" required>
+          </div>
+          <div class="msg">
+            <div class="text">Message *</div>
+            <textarea rows="2" cols="25" required></textarea>
+          </div>
+          <div class="btn">
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <center>
+      
+      <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+    </center>
+  </div>
+</footer>
+
+<script>
+function email()
+{
+    window.open('mailto:SYAS@gmail.com');
+}
+
+function initmap()
+        {
+        LatLng1 = { lat:  48.1187663, lng: 11.5793492 };
+        LatLng2 = { lat:  31.6309484, lng: -8.0480247 };
+        LatLng3 = { lat:  41.8747211, lng: 12.3396556 };
+        var MAP1=
+        {
+           center: LatLng1, 
+           zoom:8
+        };
+        var MAP2=
+        {
+           center: LatLng2, 
+           zoom:8
+        };
+        var MAP3=
+        {
+           center: LatLng3, 
+           zoom:8
+        };
+        var map= new google.maps.Map(document.getElementById('map1'),MAP1);
+        var marker1=new google.maps.Marker({map:map, position:LatLng1});
+
+        var map= new google.maps.Map(document.getElementById('map2'),MAP2);
+        var marker2=new google.maps.Marker({map:map, position:LatLng2});
+        
+        var map= new google.maps.Map(document.getElementById('map3'),MAP3);
+        var marker3=new google.maps.Marker({map:map, position:LatLng3});
+        }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6EcMDInJvF_rMnneEeqypQpt2LRqs-8E&callback=initmap"></script>
+                  
+
+</body>
+</html>
+          
